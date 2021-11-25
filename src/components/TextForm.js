@@ -19,17 +19,11 @@ export default function TextForm(props) {
         setText("");
     }
     const solve=(word)=>{
-        if(word===""){
-            return 0;
-        }
-        const arr=word;
-        let count=0;
-        for(let i=0;i<arr.length;i++){
-            if(arr.charAt(i)==' '){
-                count++;
-            }
-        }
-        return count;
+        
+        let count1=word.split(/\s+/).filter((element)=>{
+            return element.length!==0;
+        }).length;
+        return count1;
     }
     const [text,setText]=useState("Enter your text :");
     return (
@@ -38,11 +32,11 @@ export default function TextForm(props) {
             <h1>{props.heading}</h1>
             <div className="mb-3">
                 <label htmlFor="my_box" className="form-label">Example textarea</label>
-                <textarea className="form-control" onChange={onChange} style={{backgroundColor:props.mode ==='dark'?'grey':'white',color:props.mode ==='dark'?'white':'black'}} value={text} id="my_box" rows="6"></textarea>
+                <textarea className="form-control" onChange={onChange} style={{backgroundColor:props.mode ==='dark'?'hsl(240deg 100% 76%)':'white',color:props.mode ==='dark'?'white':'black'}} value={text} id="my_box" rows="6"></textarea>
             </div>
-            <button className="btn btn-primary mx-2" onClick={onClick}>Covert to UpperCase</button>
-            <button className="btn btn-primary mx-2" onClick={onClick1}>Covert to LowerCase</button>
-            <button className="btn btn-primary mx-2" onClick={onClick2}>Clear Text</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={onClick}>Covert to UpperCase</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={onClick1}>Covert to LowerCase</button>
+            <button className="btn btn-primary mx-1  my-1" onClick={onClick2}>Clear Text</button>
             <h1>Summary</h1>
             <h6>{solve(text)} words and {text.length} characters</h6>
             <h6>{Math.round(text.split(" ").length * (1/125))} mins reqd to word</h6>

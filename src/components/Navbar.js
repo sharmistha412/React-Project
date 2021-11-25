@@ -22,15 +22,15 @@ export default function Navbar(props) {
                     <div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" onClick={props.RedMode} type="checkbox" id="inlineCheckbox1" value="option1"/>
-                            <label class ="form-check-label" htmlFor="inlineCheckbox1">Red</label>
+                            <label class ="form-check-label" htmlFor="inlineCheckbox1" style={{color:props.mode ==='dark'?'white':'black'}}>Red</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" onClick={props.GreenMode} type="checkbox" id="inlineCheckbox2" value="option2"/>
-                            <label class ="form-check-label" htmlFor="inlineCheckbox2">Green</label>
+                            <label class ="form-check-label" htmlFor="inlineCheckbox2" style={{color:props.mode ==='dark'?'white':'black'}}>Green</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" onClick={props.BlueMode} type="checkbox" id="inlineCheckbox2" value="option2"/>
-                            <label class ="form-check-label" htmlFor="inlineCheckbox2">Blue</label>
+                            <label class ="form-check-label" htmlFor="inlineCheckbox2" style={{color:props.mode ==='dark'?'white':'black'}}>Blue</label>
                         </div>
                     </div>
                     <div className={`form-check form-switch text-${props.text}`}>

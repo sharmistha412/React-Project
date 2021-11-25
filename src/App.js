@@ -107,7 +107,7 @@ function App() {
         <div className='my-3'>
           <Switch>
             <Route exact path="/about">
-              <About />
+              <About mode={mode} toggleMode={toggleMode}/>
             </Route>
             <Route exact path="/">
               <TextForm heading="This is my new Heading" mode={mode} text={text} showAlert={showAlert} />
